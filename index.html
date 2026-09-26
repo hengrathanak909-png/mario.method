@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f1e9">
+  <meta name="description" content="Prepare and publish TikTok videos with MARIO_Method and PostPeer.">
+  <title>MARIO_Method — TikTok publishing</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="wordmark" href="#top" aria-label="MARIO Method home"><span class="mark">M</span><span>MARIO<br>METHOD</span></a>
+    <div class="topbar-note"><span class="live-dot"></span> POSTPEER TIKTOK STUDIO <span class="topbar-divider">/</span> 2026</div>
+    <a class="top-link" href="#publish">CREATE A POST <span aria-hidden="true">↘</span></a>
+  </header>
+
+  <main id="top">
+    <section class="intro wrap">
+      <div class="intro-copy">
+        <p class="eyebrow"><span>01</span> YOUR CREATOR DESK</p>
+        <h1>Make it.<br><em>Send it.</em></h1>
+        <p class="intro-text">One focused workspace to upload your video, choose who sees it, and publish through PostPeer.</p>
+        <a class="jump-link" href="#publish">BUILD A TIKTOK POST <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="intro-art" aria-label="Illustration of a video being prepared for upload" role="img">
+        <div class="art-note note-top">YOUR NEXT POST <span>↗</span></div>
+        <div class="phone-frame">
+          <div class="phone-speaker"></div>
+          <div class="phone-screen">
+            <div class="screen-sun"></div>
+            <div class="screen-hill hill-back"></div>
+            <div class="screen-hill hill-front"></div>
+            <div class="screen-caption">MAKE<br>IT<br>MATTER.</div>
+            <div class="screen-controls"><span>♥</span><span>•••</span><span>♫</span></div>
+          </div>
+          <div class="phone-home"></div>
+        </div>
+        <div class="art-sticker">MARIO<br>METHOD<span>✳</span></div>
+        <div class="art-note note-bottom">READY TO PUBLISH</div>
+      </div>
+    </section>
+
+    <section class="method-section" id="publish">
+      <div class="wrap method-wrap">
+        <div class="section-head">
+          <div><p class="eyebrow"><span>02</span> TIKTOK PUBLISHER</p><h2>Build your post.</h2></div>
+          <p class="section-aside">Powered by PostPeer.<br>Your API key stays private.</p>
+        </div>
+        <div class="connection-bar">
+          <div class="connection-copy"><span class="connection-light" id="connection-light"></span><div><b id="connection-title">Checking PostPeer connection</b><small id="connection-detail" aria-live="polite">Contacting the local publisher service...</small></div></div>
+          <div class="connection-actions"><form class="access-form" id="login-form" hidden><label class="visually-hidden" for="access-password">Private posting password</label><input id="access-password" type="password" name="password" placeholder="Posting password" autocomplete="current-password" required><button class="connect-button" id="login-button" type="submit">SIGN IN</button></form><button class="quiet-button" id="logout-button" type="button" hidden>SIGN OUT</button><a class="dashboard-link" href="https://www.postpeer.dev/dashboard/integrations" target="_blank" rel="noreferrer">POSTPEER INTEGRATIONS ↗</a><button class="quiet-button" id="verify-api-key" type="button">VERIFY API KEY</button><select id="account-select" aria-label="Connected TikTok account" hidden><option value="">Choose a TikTok account</option></select><button class="quiet-button" id="refresh-accounts" type="button" hidden>REFRESH ACCOUNTS</button><button class="connect-button" id="connect-account" type="button">CONNECT WITH TIKTOK</button></div>
+        </div>
+        <form class="studio-grid" id="post-form">
+          <div class="composer-card">
+            <div class="studio-panel-head"><div><p class="eyebrow"><span>01</span> VIDEO & CAPTION</p><h3>Choose your cut.</h3></div><span class="local-tag"><span></span> LOCAL PREVIEW</span></div>
+            <div class="drop-zone" id="drop-zone" tabindex="0" role="group" aria-label="Choose or drop a video">
+              <input type="file" id="video-file" accept="video/mp4,video/quicktime,video/webm" aria-label="Choose a video file">
+              <video id="video-preview" controls playsinline hidden></video>
+              <div class="empty-preview" id="empty-preview"><div class="preview-graphic"><span class="graphic-frame"></span><span class="graphic-play">▶</span><span class="graphic-spark">✳</span></div><span class="drop-title">Drop your video here</span><span class="drop-subtitle">or <button class="inline-button" id="choose-file" type="button">browse files</button></span><span class="drop-meta">MP4 · MOV · WEBM</span></div>
+            </div>
+            <div class="file-row" aria-live="polite"><span class="file-symbol">▧</span><span class="file-name" id="file-name">No video selected</span><span class="file-size" id="file-size">VIDEO</span><button class="remove-file" id="remove-file" type="button" aria-label="Remove selected video" hidden>×</button></div>
+            <label class="field-label" for="caption">CAPTION <span id="caption-count">0 characters</span></label>
+            <textarea id="caption" name="caption" rows="4" placeholder="Write a caption for your video..."></textarea>
+            <p class="field-note">Your video is uploaded to PostPeer before publishing. Current TikTok account limits apply.</p>
+          </div>
+
+          <div class="settings-card">
+            <div class="studio-panel-head"><div><p class="eyebrow"><span>02</span> AUDIENCE & DELIVERY</p><h3>Set the terms.</h3></div><span class="step-count">TIKTOK</span></div>
+            <fieldset class="choice-field"><legend>WHO CAN WATCH?</legend><div class="audience-options">
+              <label class="audience-choice"><input type="radio" name="audience" value="PUBLIC_TO_EVERYONE" checked><span class="audience-icon">◉</span><b>Public</b><small>Everyone</small></label>
+              <label class="audience-choice"><input type="radio" name="audience" value="MUTUAL_FOLLOW_FRIENDS"><span class="audience-icon">◎</span><b>Friends</b><small>Mutual followers</small></label>
+              <label class="audience-choice"><input type="radio" name="audience" value="SELF_ONLY"><span class="audience-icon">◌</span><b>Private</b><small>Only you</small></label>
+            </div></fieldset>
+            <fieldset class="choice-field delivery-field"><legend>WHEN SHOULD IT GO LIVE?</legend><div class="delivery-options">
+              <label><input type="radio" name="delivery" value="now" checked><span>Auto-post now</span></label>
+              <label><input type="radio" name="delivery" value="schedule"><span>Schedule</span></label>
+            </div><label class="schedule-field" id="schedule-field" hidden for="scheduled-for">DATE & TIME<input id="scheduled-for" type="datetime-local"></label></fieldset>
+            <div class="post-toggles"><label><input type="checkbox" id="allow-comments" checked><span class="toggle-track"></span><span>Allow comments</span></label><label><input type="checkbox" id="allow-duet" checked><span class="toggle-track"></span><span>Allow Duet</span></label><label><input type="checkbox" id="allow-stitch" checked><span class="toggle-track"></span><span>Allow Stitch</span></label></div>
+            <label class="confirm-row"><input type="checkbox" id="confirm-post"><span class="check-box" aria-hidden="true"></span><span>I reviewed the video, caption and audience settings.</span></label>
+            <button class="publish-button" id="publish-button" type="submit"><span id="publish-label">AUTO-POST TO TIKTOK</span><span aria-hidden="true">↗</span></button>
+            <p class="publish-status" id="publish-status" role="status" aria-live="polite">Your video will be uploaded to PostPeer before publishing.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer"><a class="wordmark footer-mark" href="#top"><span class="mark">M</span><span>MARIO<br>METHOD</span></a><p>Unofficial publishing interface. TikTok account connection and posting are handled by PostPeer.<br>Your PostPeer API key is kept on the local server and is never sent to this page.</p><a href="https://www.postpeer.dev/docs/platforms/tiktok" class="back-top" target="_blank" rel="noreferrer">POSTPEER API DOCS ↗</a></footer>
+</body>
+</html>
